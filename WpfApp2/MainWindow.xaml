@@ -1,0 +1,56 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Test WPF" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel>
+            <DockPanel>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="ButtonTestRadioButton" Content="Button" 
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top" Click="Button_Click"/>
+                        <CheckBox x:Name="TestRadioButton" Content="CheckButtonTestBox" 
+                            HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                        <TextBox x:Name="TextBoxForButton" HorizontalAlignment="Left"
+                            TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116" Height="46"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button x:Name="ButtonAddMovableBlock" Content="Add Movable Block" 
+                        HorizontalAlignment="Left" VerticalAlignment="Top" Click="OnClickAddMovableBlock"/>
+                        <CheckBox x:Name="LinkInfoDisplayed" Click="LinkInfoDisplayed_Click" IsChecked="True">Link Displayed ?</CheckBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Vertical" HorizontalAlignment="Right">
+                    <TextBlock>Génération aléatoire</TextBlock>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock>Nombre de rectangles</TextBlock>
+                            <TextBlock>Nombre de liens</TextBlock>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBox x:Name="GenerationNbRectangle" Width="50" PreviewTextInput="NumberValidationTextBox"></TextBox>
+                            <TextBox x:Name="GenerationNbLink" Width="50" PreviewTextInput="NumberValidationTextBox"></TextBox>
+                        </StackPanel>
+                    </StackPanel>
+                    <Button x:Name="ButtonRandomGeneration" Width="150" Click="ButtonRandomGeneration_Click">Génération</Button>
+                </StackPanel>
+            </DockPanel>
+        </StackPanel>
+        <Border x:Name="BorderTestCustomCanvas" 
+                BorderBrush="Orange" 
+                BorderThickness="5" Margin="0,80,0,0">
+            <Canvas x:Name="TestCustomCanvas" 
+                    Background="Pink">
+            </Canvas>
+        </Border>
+        <local:PopUpLink x:Name="PopUpNewLink">
+            
+        </local:PopUpLink>
+    </Grid>
+</Window>
